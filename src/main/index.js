@@ -59,7 +59,7 @@ function menuSetup() {
               title: 'About',
               message: 'todometer is built by @cassidoo',
               detail:
-                'You can find her on most things @cassidoo, or on her website cassidoo.co.',
+                'You ca find her on most things @cassidoo, or on her website cassidoo.co.',
               icon: path.join(app.getAppPath(), 'assets/png/64x64.png'),
             });
           },
