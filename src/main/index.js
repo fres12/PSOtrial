@@ -32,7 +32,7 @@ function createWindow() {
     minWidth: 320,
     height: 600,
     fullscreenable: true,
-    backgroundColor: '#403F4D',
+    backgroundColor: '#403F4F',
     icon: path.join(app.getAppPath(), 'assets/png/128x128.png'),
     webPreferences: {
       preload: path.join(app.getAppPath(), 'dist/preload/index.cjs'),
@@ -192,7 +192,7 @@ function menuSetup() {
               },
             },
             {
-              label: 'Every hour',
+              label: 'Every two hour',
               type: 'radio',
               checked: store.get('reminder') === 'hour',
               click: (e) => {
