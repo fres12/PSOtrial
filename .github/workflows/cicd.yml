@@ -1,4 +1,5 @@
 name: Initial configuration
+
 on:
   push:
     branches:
@@ -8,13 +9,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Langkah untuk checkout source code
       - name: Checkout Source
         uses: actions/checkout@v4
 
-      - name: Build docker image
-        run: docker build -t fressrg/trial1 .
+      # Langkah untuk mencetak versi Docker (untuk memastikan kompatibilitas)
+      - name: Check Docker Version
+        run: docker --version
 
-      - name: Login to docker hub
+      # Tambahkan informasi tentang runner untuk debugging
+      - name: Show Runner Environment
+        run: |
+          echo "OS: $(uname -a)"
+          echo "Docker info:"
+          docker info
+
+      # Langkah untuk membangun image Docker
+      - name: Build Docker Image
+        run: |
+          echo "Starting Docker build..."
+          docker build --progress=plain -t fressrg/trial1 .
+
+      # Tambahkan validasi image setelah build
+      - name: Validate Docker Image
+        run: docker images | grep fressrg/trial1
+
+      # Langkah untuk login ke Docker Hub
+      - name: Login to Docker Hub
         run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-
-
