@@ -192,7 +192,7 @@ function menuSetup() {
               },
             },
             {
-              label: 'Every hour',
+              label: 'Every two hour',
               type: 'radio',
               checked: store.get('reminder') === 'hour',
               click: (e) => {
