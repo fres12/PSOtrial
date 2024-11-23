@@ -38,6 +38,7 @@
 	},
 	"scripts": {
 		"dev": "node src/scripts/watch.mjs",
+		"start": "node src/scripts/watch.mjs",
 		"build": "npm run build:main & npm run build:preload & npm run build:renderer",
 		"update-vendors": "cross-env ELECTRON_RUN_AS_NODE=1 electron src/scripts/update-electron-vendors.mjs",
 		"build:main": "cd ./src/main && vite build",
