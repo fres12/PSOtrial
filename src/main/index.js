@@ -147,7 +147,7 @@ function menuSetup() {
               },
             },
             {
-              label: 'Every 5 minutes',
+              label: 'Every 6 minutes',
               type: 'radio',
               checked: store.get('reminder') === 'fiveminutes',
               click: (e) => {
